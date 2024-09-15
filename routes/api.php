@@ -7,5 +7,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::apiResource('cities', \App\Http\Controllers\Api\CityController::class);
-
+Route::get('/cities', [\App\Http\Controllers\Api\CityController::class, 'index'])->name('cities.index');
+Route::get('/cities/{id}', [\App\Http\Controllers\Api\CityController::class, 'show'])->name('cities.show');

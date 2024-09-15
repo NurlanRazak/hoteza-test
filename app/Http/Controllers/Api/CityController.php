@@ -17,34 +17,17 @@ class CityController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        return City::whereId($id)->with('weathers')->first();
+        $city = City::whereId($id)->with('weathers')->first();
+
+        if (!$city) {
+            return response()->json(['message' => 'City not found'], 404);
+        }
+
+        return $city;
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
