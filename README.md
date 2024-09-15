@@ -110,6 +110,11 @@ To run the tests, use the following command:
 ./vendor/bin/sail artisan test
 ```
 
+```bash
+./vendor/bin/sail artisan test --filter=CityControllerTest
+```
+
+
 ### 10. Stopping the Application
 
 To stop the application, run the following:
