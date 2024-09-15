@@ -19,7 +19,7 @@ Follow these steps to set up the project locally using Laravel Sail.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/laravel-weather-api.git
+git clone https://github.com/NurlanRazak/hoteza-test.git
 cd laravel-weather-api
 ```
 
