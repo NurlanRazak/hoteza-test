@@ -138,6 +138,12 @@ To stop the application, run the following:
   ./vendor/bin/sail artisan migrate
   ```
 
+- API documention
+
+```
+http://localhost/api/docs
+```
+
 ---
 
 This should give a clear set of instructions for setting up, running, and maintaining the Laravel project with Sail, as well as handling the scheduler and queue worker.

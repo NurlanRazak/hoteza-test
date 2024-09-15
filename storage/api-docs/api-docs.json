@@ -1,0 +1,332 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "City API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/cities": {
+            "get": {
+                "tags": [
+                    "Cities"
+                ],
+                "summary": "Get a list of cities with their weather data",
+                "operationId": "185d0aefb5fd6e9d4e5f1263e2734df4",
+                "responses": {
+                    "200": {
+                        "description": "A list of cities with their weather data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 1
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Astana"
+                                            },
+                                            "latitude": {
+                                                "type": "number",
+                                                "format": "float",
+                                                "example": 51.1694
+                                            },
+                                            "longitude": {
+                                                "type": "number",
+                                                "format": "float",
+                                                "example": 71.4491
+                                            },
+                                            "weathers": {
+                                                "type": "array",
+                                                "items": {
+                                                    "properties": {
+                                                        "main": {
+                                                            "type": "string",
+                                                            "example": "Clouds"
+                                                        },
+                                                        "description": {
+                                                            "type": "string",
+                                                            "example": "broken clouds"
+                                                        },
+                                                        "icon": {
+                                                            "type": "string",
+                                                            "example": "04n"
+                                                        },
+                                                        "temp": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 286.14
+                                                        },
+                                                        "feels_like": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 285.79
+                                                        },
+                                                        "temp_min": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 286.14
+                                                        },
+                                                        "temp_max": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 286.14
+                                                        },
+                                                        "pressure": {
+                                                            "type": "integer",
+                                                            "example": 1022
+                                                        },
+                                                        "humidity": {
+                                                            "type": "integer",
+                                                            "example": 88
+                                                        },
+                                                        "sea_level": {
+                                                            "type": "integer",
+                                                            "example": 1022
+                                                        },
+                                                        "grnd_level": {
+                                                            "type": "integer",
+                                                            "example": 980
+                                                        },
+                                                        "visibility": {
+                                                            "type": "integer",
+                                                            "example": 10000
+                                                        },
+                                                        "wind_speed": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 6
+                                                        },
+                                                        "wind_deg": {
+                                                            "type": "integer",
+                                                            "example": 50
+                                                        },
+                                                        "wind_gust": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 7.5
+                                                        },
+                                                        "rain_1h": {
+                                                            "type": "number",
+                                                            "format": "float",
+                                                            "example": 3.16
+                                                        },
+                                                        "clouds_all": {
+                                                            "type": "integer",
+                                                            "example": 75
+                                                        },
+                                                        "dt": {
+                                                            "type": "string",
+                                                            "format": "date-time",
+                                                            "example": "2024-09-15T12:34:56Z"
+                                                        },
+                                                        "timezone": {
+                                                            "type": "integer",
+                                                            "example": 18000
+                                                        },
+                                                        "country": {
+                                                            "type": "string",
+                                                            "example": "KZ"
+                                                        },
+                                                        "sunrise": {
+                                                            "type": "string",
+                                                            "format": "date-time",
+                                                            "example": "2024-09-15T06:00:00Z"
+                                                        },
+                                                        "sunset": {
+                                                            "type": "string",
+                                                            "format": "date-time",
+                                                            "example": "2024-09-15T18:00:00Z"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/cities/{id}": {
+            "get": {
+                "tags": [
+                    "Cities"
+                ],
+                "summary": "Get a specific city with its weather data",
+                "operationId": "87b6e2f2af6fbfa74374d2f9e3512d76",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the city",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "City with its weather data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Astana"
+                                        },
+                                        "latitude": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": 51.1694
+                                        },
+                                        "longitude": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": 71.4491
+                                        },
+                                        "weathers": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "main": {
+                                                        "type": "string",
+                                                        "example": "Clouds"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "broken clouds"
+                                                    },
+                                                    "icon": {
+                                                        "type": "string",
+                                                        "example": "04n"
+                                                    },
+                                                    "temp": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 286.14
+                                                    },
+                                                    "feels_like": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 285.79
+                                                    },
+                                                    "temp_min": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 286.14
+                                                    },
+                                                    "temp_max": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 286.14
+                                                    },
+                                                    "pressure": {
+                                                        "type": "integer",
+                                                        "example": 1022
+                                                    },
+                                                    "humidity": {
+                                                        "type": "integer",
+                                                        "example": 88
+                                                    },
+                                                    "sea_level": {
+                                                        "type": "integer",
+                                                        "example": 1022
+                                                    },
+                                                    "grnd_level": {
+                                                        "type": "integer",
+                                                        "example": 980
+                                                    },
+                                                    "visibility": {
+                                                        "type": "integer",
+                                                        "example": 10000
+                                                    },
+                                                    "wind_speed": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 6
+                                                    },
+                                                    "wind_deg": {
+                                                        "type": "integer",
+                                                        "example": 50
+                                                    },
+                                                    "wind_gust": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 7.5
+                                                    },
+                                                    "rain_1h": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": 3.16
+                                                    },
+                                                    "clouds_all": {
+                                                        "type": "integer",
+                                                        "example": 75
+                                                    },
+                                                    "dt": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-09-15T12:34:56Z"
+                                                    },
+                                                    "timezone": {
+                                                        "type": "integer",
+                                                        "example": 18000
+                                                    },
+                                                    "country": {
+                                                        "type": "string",
+                                                        "example": "KZ"
+                                                    },
+                                                    "sunrise": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-09-15T06:00:00Z"
+                                                    },
+                                                    "sunset": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-09-15T18:00:00Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "City not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Cities",
+            "description": "Cities"
+        }
+    ]
+}
