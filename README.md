@@ -128,6 +128,7 @@ To stop the application, run the following:
 - **City Model**: Represents the cities where weather data is fetched from.
 - **Weather Model**: Stores weather details for a given city.
 - **WeatherController**: Handles the logic of storing weather data from the API.
+- **Queue Time**: In config folder we have weather.php -> update_time here we can set time for updating from weather api.
 
 ## Additional Notes
 
