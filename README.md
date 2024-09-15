@@ -88,13 +88,21 @@ Start the Laravel queue worker to process any queued jobs (e.g., storing weather
 
 ### 7. Access the Application
 
-Once everything is set up, you can access the application via your local environment:
+Once everything is set up, you can access the application via your local environment, and here we can create cities:
 
 ```
 http://localhost
 ```
 
-### 8. Running Tests
+### 8. Api of cities 
+
+/api/cities, /api/cities/{id}:
+
+```
+http://localhost/api/cities
+```
+
+### 9. Running Tests
 
 To run the tests, use the following command:
 
@@ -102,7 +110,7 @@ To run the tests, use the following command:
 ./vendor/bin/sail artisan test
 ```
 
-### 9. Stopping the Application
+### 10. Stopping the Application
 
 To stop the application, run the following:
 
